@@ -22,7 +22,7 @@ APP_NAME = 'Reira Djapp'
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = '&wtdz**k=79_lxeo=&i%g8jm(9@glg_rb(#yhd#i+a2ys+trn='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -54,9 +54,13 @@ INSTALLED_APPS = [
     # Extensions
     'django_extensions',
     'crispy_forms',
+    'crispy_bootstrap5',
     'social_django',
     'taggit',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

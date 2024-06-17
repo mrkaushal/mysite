@@ -17,7 +17,6 @@ Including another URLconf
 import os
 from django.contrib import admin
 from django.urls import include, path
-from django.conf.urls import url
 from django.views.static import serve
 from django.contrib.auth import views as auth_views
 
@@ -30,7 +29,7 @@ urlpatterns = [
     # Default paths
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    url(r'^oauth/', include('social_django.urls', namespace='social')),
+    path('oauth/', include('social_django.urls', namespace='social')),
 
     # My apps
     path('', include('home.urls')),
@@ -41,7 +40,7 @@ urlpatterns = [
     path('ads/', include('ads.urls')),
 
     # Serve the static HTML
-    url(r'^site/(?P<path>.*)$', serve,
+    path(r'^site/(?P<path>.*)$', serve,
         {'document_root': SITE_ROOT, 'show_indexes': True},
         name='site_path'
     ),
